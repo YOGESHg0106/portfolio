@@ -1,0 +1,143 @@
+.contact {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  text-align: center;
+  color: white;
+}
+
+.contact-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Contact Section Wrapper */
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 100%; /* Ensuring nothing goes out */
+  box-sizing: border-box;
+  overflow: hidden; /* Preventing content from overflowing */
+}
+
+/* Contact Form */
+.contact-form {
+  flex: 1;
+  padding: 20px;
+  max-width: 400px;
+  min-width: 300px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.contact-form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  margin: 10px 0;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background: #ff4b5c;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #ff6b81;
+}
+
+/* Contact Info */
+.contact-info {
+  flex: 1;
+  padding: 20px;
+  max-width: 400px;
+  min-width: 300px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff6b81;
+  transform: scale(1.1);
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 20px; /* Prevents overflow */
+  }
+
+  .contact-form,
+  .contact-info {
+    max-width: 100%;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
+  }
+}
