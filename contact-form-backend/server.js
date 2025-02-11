@@ -11,9 +11,7 @@ const app = express();
 // ✅ CORS Middleware - Allow requests only from your frontend
 app.use(
   cors({
-    origin:
-      process.env.FRONTEND_URL ||
-      "https://my-portfolio-lilac-beta-69.vercel.app", // Replace with your Vercel frontend URL
+    origin: process.env.FRONTEND_URL || "*", // Replace with your Vercel frontend URL
     methods: ["GET", "POST"],
     credentials: true,
   })
