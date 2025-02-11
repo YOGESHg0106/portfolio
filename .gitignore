@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 contact-form-backend/.env
+.env
 dist
 dist-ssr
 *.local
