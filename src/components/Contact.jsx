@@ -3,6 +3,11 @@ import "../styles/Contact.css";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
+  // ✅ Use Environment Variables for Backend URL
+  const BACKEND_URL =
+    import.meta.env.VITE_BACKEND_URL ||
+    "https://portfolio-backend-dlcf.onrender.com";
+
   // State for form data and messages
   const [formData, setFormData] = useState({
     name: "",
@@ -24,9 +29,16 @@ const Contact = () => {
     setLoading(true);
     setResponseMessage(""); // Reset message
 
+    // ✅ Basic Validation: Check if fields are empty
+    if (!formData.name || !formData.email || !formData.message) {
+      setResponseMessage("❌ Please fill in all fields.");
+      setLoading(false);
+      return;
+    }
+
     try {
       // ✅ Step 1: Send email
-      const emailRes = await fetch("http://localhost:5000/api/email", {
+      const emailRes = await fetch(`${BACKEND_URL}/api/email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -40,7 +52,7 @@ const Contact = () => {
       }
 
       // ✅ Step 2: Store message in MongoDB
-      const dbRes = await fetch("http://localhost:5000/api/contact", {
+      const dbRes = await fetch(`${BACKEND_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
